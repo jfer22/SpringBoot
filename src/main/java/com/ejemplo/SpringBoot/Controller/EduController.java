@@ -1,8 +1,8 @@
+
 package com.ejemplo.SpringBoot.Controller;
 
-
-import com.ejemplo.SpringBoot.model.Persona;
-import com.ejemplo.SpringBoot.service.IPersonaService;
+import com.ejemplo.SpringBoot.model.Educacion;
+import com.ejemplo.SpringBoot.service.IEduService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -16,40 +16,41 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class Controller {
+public class EduController {
     
     @Autowired
-    private IPersonaService persoServ;
+    private IEduService eduServ;
     
     @CrossOrigin(origins = "http://localhost:4200")
-    @PostMapping ("/new/persona")
-    public void agregarPersona (@RequestBody Persona pers){
-        persoServ.crearPersona(pers);
+    @PostMapping ("/new/educacion")
+    public void agregarEducacion (@RequestBody Educacion edu){
+        eduServ.crearEducacion(edu);
     }
     
     @CrossOrigin(origins = "http://localhost:4200")
-    @GetMapping ("/ver/personas")
-    @ResponseBody
-    public List<Persona> verPersonas (){
-        return persoServ.verPersonas();
+    @GetMapping ("/ver/edus")
+    @ResponseBody   
+    public List<Educacion> verEducaciones (){
+        return eduServ.verEducaciones();
     }
     
     @CrossOrigin(origins = "http://localhost:4200")
-    @DeleteMapping ("/delete/{id}")
-    public void  borrarPersona (@PathVariable Long id){
-        persoServ.borrarPersona(id);
+    @DeleteMapping ("/deleteEdu/{id}")
+    public void  borrarEducacion (@PathVariable Long id){
+        eduServ.borrarEducacion(id);
     }
     
     @CrossOrigin(origins = "http://localhost:4200")
-    @GetMapping ("/update/{id}")
-    public Persona  buscarPersona (@PathVariable Long id){
-        return persoServ.buscarPersona(id);
+    @GetMapping ("/updateEdu/{id}")
+    public Educacion  buscarEducacion (@PathVariable Long id){
+        return eduServ.buscarEducacion(id);
     }
     
+        
     @CrossOrigin(origins = "http://localhost:4200")
-    @PutMapping ("/update/{id}")
-    public void editarPersona (@RequestBody Persona pers){
-        persoServ.editarPersona(pers);
+    @PutMapping ("/updateEdu/{id}")
+    public void editarEducacion (@RequestBody Educacion edu){
+        eduServ.editarEducacion(edu);
     }
-
+    
 }

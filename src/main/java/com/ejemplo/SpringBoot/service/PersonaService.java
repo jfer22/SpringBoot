@@ -12,7 +12,7 @@ public class PersonaService implements IPersonaService{
     
     @Autowired
     public PersonaRepository persoRepo;
-
+    
     @Override
     public List<Persona> verPersonas() {
         return persoRepo.findAll();
@@ -32,10 +32,18 @@ public class PersonaService implements IPersonaService{
     public Persona buscarPersona(Long id) {
         return persoRepo.findById(id).orElse(null);
     }
-
+    
+    
     @Override
     public void editarPersona(Persona per) {
         persoRepo.save(per);
     }
+    
+    @Override
+    public Persona buscarPorEmailAndContrasena(String email, String contrasena){
+        return persoRepo.findByEmailAndContrasena(email, contrasena).get();
+    }
+    
+    
     
 }

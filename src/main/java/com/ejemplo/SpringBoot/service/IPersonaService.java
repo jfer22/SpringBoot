@@ -11,5 +11,8 @@ public interface IPersonaService {
     public void borrarPersona(Long id);
     public Persona buscarPersona(Long id);
     public void editarPersona(Persona per);
+    public Persona buscarPorEmailAndContrasena(String email, String contrasena);
+    
+
     
 }
