@@ -22,7 +22,7 @@ public class UserController {
     private IPersonaService persoServ;
     
     
-    @CrossOrigin(origins = "http://localhost:4200")
+    //@CrossOrigin(origins = "http://localhost:4200")
     @PostMapping ("/new/persona")
     public void agregarPersona (@RequestBody Persona pers){
         persoServ.crearPersona(pers);
@@ -30,7 +30,7 @@ public class UserController {
     
     
     
-    @CrossOrigin(origins = "http://localhost:4200")
+    //@CrossOrigin(origins = "http://localhost:4200")
     @GetMapping ("/ver/personas")
     @ResponseBody
     public List<Persona> verPersonas (){
@@ -39,27 +39,27 @@ public class UserController {
     
     
     
-    @CrossOrigin(origins = "http://localhost:4200")
+    //@CrossOrigin(origins = "http://localhost:4200")
     @DeleteMapping ("/deleteUser/{id}")
     public void  borrarPersona (@PathVariable Long id){
         persoServ.borrarPersona(id);
     }
     
         
-    @CrossOrigin(origins = "http://localhost:4200")
+    //@CrossOrigin(origins = "http://localhost:4200")
     @GetMapping ("/update/{id}")
     public Persona  buscarPersona (@PathVariable Long id){
         return persoServ.buscarPersona(id);
     }
     
         
-    @CrossOrigin(origins = "http://localhost:4200")
+    //@CrossOrigin(origins = "http://localhost:4200")
     @PutMapping ("/update/{id}")
     public void editarPersona (@RequestBody Persona pers){
         persoServ.editarPersona(pers);
     }
     
-    @CrossOrigin(origins = "http://localhost:4200")
+    //@CrossOrigin(origins = "http://localhost:4200")
     @GetMapping(value = "/login/{email}/{contrasena}")
     public Persona buscarPorEmailAndContrasena(@PathVariable String email, @PathVariable String contrasena)  {
         return persoServ.buscarPorEmailAndContrasena(email, contrasena);

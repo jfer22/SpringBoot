@@ -21,33 +21,33 @@ public class EduController {
     @Autowired
     private IEduService eduServ;
     
-    @CrossOrigin(origins = "http://localhost:4200")
+    //@CrossOrigin(origins = "http://localhost:4200")
     @PostMapping ("/new/educacion")
     public void agregarEducacion (@RequestBody Educacion edu){
         eduServ.crearEducacion(edu);
     }
     
-    @CrossOrigin(origins = "http://localhost:4200")
+    //@CrossOrigin(origins = "http://localhost:4200")
     @GetMapping ("/ver/edus")
     @ResponseBody   
     public List<Educacion> verEducaciones (){
         return eduServ.verEducaciones();
     }
     
-    @CrossOrigin(origins = "http://localhost:4200")
+    //@CrossOrigin(origins = "http://localhost:4200")
     @DeleteMapping ("/deleteEdu/{id}")
     public void  borrarEducacion (@PathVariable Long id){
         eduServ.borrarEducacion(id);
     }
     
-    @CrossOrigin(origins = "http://localhost:4200")
+    //@CrossOrigin(origins = "http://localhost:4200")
     @GetMapping ("/updateEdu/{id}")
     public Educacion  buscarEducacion (@PathVariable Long id){
         return eduServ.buscarEducacion(id);
     }
     
         
-    @CrossOrigin(origins = "http://localhost:4200")
+    //@CrossOrigin(origins = "http://localhost:4200")
     @PutMapping ("/updateEdu/{id}")
     public void editarEducacion (@RequestBody Educacion edu){
         eduServ.editarEducacion(edu);
