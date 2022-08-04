@@ -21,33 +21,33 @@ public class EduController {
     @Autowired
     private IEduService eduServ;
     
-    //@CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://angular-host-14a9d.web.app")
     @PostMapping ("/new/educacion")
     public void agregarEducacion (@RequestBody Educacion edu){
         eduServ.crearEducacion(edu);
     }
     
-    //@CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://angular-host-14a9d.web.app")
     @GetMapping ("/ver/edus")
     @ResponseBody   
     public List<Educacion> verEducaciones (){
         return eduServ.verEducaciones();
     }
     
-    //@CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://angular-host-14a9d.web.app")
     @DeleteMapping ("/deleteEdu/{id}")
     public void  borrarEducacion (@PathVariable Long id){
         eduServ.borrarEducacion(id);
     }
     
-    //@CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://angular-host-14a9d.web.app")
     @GetMapping ("/updateEdu/{id}")
     public Educacion  buscarEducacion (@PathVariable Long id){
         return eduServ.buscarEducacion(id);
     }
     
         
-    //@CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://angular-host-14a9d.web.app")
     @PutMapping ("/updateEdu/{id}")
     public void editarEducacion (@RequestBody Educacion edu){
         eduServ.editarEducacion(edu);
