@@ -14,11 +14,9 @@
 	<name>SpringBoot</name>
 	<description>Mi primer proyecto con Spring Boot</description>
 	<properties>
-		<java.version>18</java.version>
-	
-                <maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.source>1.8</maven.compiler.source>
                 <maven.compiler.target>1.8</maven.compiler.target>
-        </properties>
+	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
